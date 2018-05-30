@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>گۆڕینی کوردی بۆ لاتێک</title>
+    <meta content="">
+    <style></style>
+  </head>
+  <body>
+    <div style="text-align:center">
+      <textarea id="UniKurd" type="text" dir="rtl" placeholder="نوسینی یونیکۆد لێرە داخڵکە" rows="8" cols="90" style="background-color: #FFF1DF"> </textarea>
+      <textarea id="LatexKurd" type="text" rows="8" cols="90" style="background-color: #FFF1DF">  </textarea>
+      <br>
+      <button type="button" onclick="convert();">گۆڕین</button>
+    </div>
+
+    <script>
+    var vara = new Array; var varb = new Array;
+    var letters = [
+      ["یی","Ey"],
+      ["وو","uw"],
+      ["مم","m^m"],
+      ["کک","k^k"],
+      ["،",","],
+      ["\"",""],
+      //["\\","/"], //cant get this one to work :(
+      ["ا","A"],
+      ["ە","a"],
+      ["ب","b"],
+      ["پ","p"],
+      ["ت","t"],
+      ["ج","j"],
+      ["چ","^c"],
+      ["ح",".h"],
+      ["خ","x"],
+      ["د","d"],
+      ["ر","r"],
+      ["ڕ",".r"],
+      ["ز","z"],
+      ["ژ","^z"],
+      ["س","s"],
+      ["ش","^s"],
+      ["ع","`"],
+      ["غ","^g"],
+      ["ف","f"],
+      ["ڤ","v"],
+      ["ق","q"],
+      ["ک","k"],
+      ["گ","g"],
+      ["ل","l"],
+      ["ڵ","^l"],
+      ["م","m"],
+      ["ن","n"],
+      ["ه","h"],
+      ["ھ","h"],
+      ["و","w"],
+      ["ۆ","o"],
+      ["ی","y"],
+      ["ێ","^e"],
+      ["ئ","^"]
+    ]
+    function convert() {
+      var oldText = document.getElementById("UniKurd").value;
+
+      var newText = oldText + " ";
+    	for (var i = 0; i < letters.length; i++) {
+        re = new RegExp(letters[i][0], "gi");
+        newText = newText.replace(re, letters[i][1]);
+      }
+      document.getElementById("LatexKurd").value = newText;
+    }
+
+    </script>
+  </body>
+</html>
